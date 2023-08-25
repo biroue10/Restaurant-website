@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const uuid = require("uuid");
 const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -20,10 +21,7 @@ app.get("/recommend", function (req, res) {
 });
 app.post("/recommend", function (req, res) {
   const Restaurant = req.body;
-  // const Address = req.body.address
-  // const Type_of_cuisine = req.body.cuisine
-  // const Restaurant_website = req.body.website
-  // const Why_do_you_recommend_it = req.body.description
+  Restaurant.id = uuid.v5();
   const filePath = path.join(__dirname, "data", "restaurant.json");
   const fileData = fs.readFileSync(filePath);
   const storedRestaurant = JSON.parse(fileData);
@@ -39,5 +37,9 @@ app.get("/restaurants", function (req, res) {
     numberOfrestaurants: storedRestaurant.length,
     restaurants: storedRestaurant,
   });
+});
+app.get("/restaurants/:id", function (req, res) {
+  const restaurantID = req.params.id;
+  res.render("restaurants-detail", { rid: restaurantID });
 });
 app.listen(3000);
