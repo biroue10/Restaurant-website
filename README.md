@@ -92,6 +92,8 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Thank you for using our Restaurant Website with Node.js! If you have any questions or need assistance, please don't hesitate to contact us at [contact@restaurant.com](mailto:contact@restaurant.com). Enjoy building your restaurant's online presence!
+
 ```
 
 Feel free to copy and paste this complete Markdown code into your README.md file. Remember to replace placeholders like `your-username`, update email addresses, and modify content to match your specific project.
+```

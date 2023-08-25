@@ -12,5 +12,12 @@
     "cuisine": "cuisine marocaine",
     "website": "http://www.birouemaroc.com",
     "description": "i higly this restaurant"
+  },
+  {
+    "name": "maman",
+    "address": "garoua",
+    "cuisine": "cuisine moungouri",
+    "website": "http://www.maipa.com",
+    "description": "this is the website of my mother"
   }
 ]

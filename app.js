@@ -32,6 +32,12 @@ app.post("/recommend", function (req, res) {
   res.redirect("/confirm");
 });
 app.get("/restaurants", function (req, res) {
-  res.render("restaurants");
+  const filePath = path.join(__dirname, "data", "restaurant.json");
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurant = JSON.parse(fileData);
+  res.render("restaurants", {
+    numberOfrestaurants: storedRestaurant.length,
+    restaurants: storedRestaurant,
+  });
 });
 app.listen(3000);
