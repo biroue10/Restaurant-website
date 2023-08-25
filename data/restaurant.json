@@ -1,1 +1,16 @@
-[{"name":"biroue restaurant","address":"chandler, quebec, canada","cuisine":"cuisine camerounaise","website":"http://www.biroue.com","description":"I highly recommend it"}]
+[
+  {
+    "name": "biroue restaurant",
+    "address": "chandler, quebec, canada",
+    "cuisine": "cuisine camerounaise",
+    "website": "http://www.biroue.com",
+    "description": "I highly recommend it"
+  },
+  {
+    "name": "BIROUE ISAAC",
+    "address": "Casablanca",
+    "cuisine": "cuisine marocaine",
+    "website": "http://www.birouemaroc.com",
+    "description": "i higly this restaurant"
+  }
+]
