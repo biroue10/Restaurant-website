@@ -10,12 +10,17 @@
   <%- include('include/header') %>
     <%- include('include/aside') %>
       <main>
-        <h1>Title of the restaurant <%= rid %>
+        <h1>
+          <%= restaurant.name %>
         </h1>
-        <p>Cuisine | Address</p>
-        <p>Description of the resetaurant</p>
         <p>
-          <a href="">Go to the restaurant's website</a>
+          <%= restaurant.cuisine %> | <%= restaurant.address %>
+        </p>
+        <p>
+          <%= restaurant.description %>
+        </p>
+        <p>
+          <a href="  <%= restaurant.website %>">Go to the restaurant's website</a>
         </p>
       </main>
 </body>

@@ -21,7 +21,7 @@ app.get("/recommend", function (req, res) {
 });
 app.post("/recommend", function (req, res) {
   const Restaurant = req.body;
-  Restaurant.id = uuid.v5();
+  Restaurant.id = uuid.v4();
   const filePath = path.join(__dirname, "data", "restaurant.json");
   const fileData = fs.readFileSync(filePath);
   const storedRestaurant = JSON.parse(fileData);
@@ -40,6 +40,18 @@ app.get("/restaurants", function (req, res) {
 });
 app.get("/restaurants/:id", function (req, res) {
   const restaurantID = req.params.id;
-  res.render("restaurants-detail", { rid: restaurantID });
+  const filePath = path.join(__dirname, "data", "restaurant.json");
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurant = JSON.parse(fileData);
+  for (const restaurant of storedRestaurant){
+    if(restaurant.id===restaurantID){
+      return res.render("restaurants-detail", { restaurant: restaurant });
+    }
+  }
+  res.render('404')
+
 });
+app.use(function(req,res){
+  res.render('404')
+})
 app.listen(3000);
